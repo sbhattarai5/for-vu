@@ -23,13 +23,10 @@ class Lead:
         where closer to 0 means unlikely to convert into a borrower
         and closer to infinity meaning very likely to convert'''
         
-        return Lead.weight_sex * self.sex + Lead.weight_age * self.age\
-            + Lead.weight_credit_score * self.credit_score
+        return Lead.weight_sex * self.sex + Lead.weight_age * self.age + Lead.weight_credit_score * self.credit_score
     
     def __lt__(self, other):
         return self.value < other.value
 
     def __str__(self):
-        return self.name + ' ' + str(self.age) + ' ' + ('M' if self.sex == -1 else 'F')\
-            + ' ' + str(self.credit_score) + ' ' + self.email +\
-            ' ' + str(self.value) 
+        return self.name + ' ' + str(self.age) + ' ' + ('M' if self.sex == -1 else 'F') + ' ' + str(self.credit_score) + ' ' + self.email + ' ' + str(self.value) 

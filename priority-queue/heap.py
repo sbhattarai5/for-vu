@@ -28,9 +28,7 @@ class Heap:
             return
         max_child_idx = idx_child1
         if idx_child2 < len(self.arr):
-            max_child = idx_child2\
-                if self.compare(self.arr[max_child_idx],\
-                                self.arr[idx_child2]) else max_child_idx
+            max_child = idx_child2 if self.compare(self.arr[max_child_idx], self.arr[idx_child2]) else max_child_idx
         if self.compare(self.arr[idx], self.arr[max_child_idx]):
             self.swap(idx, max_child_idx)
             self.heapify_down(max_child_idx)
